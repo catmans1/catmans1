@@ -6,7 +6,6 @@
 <p>
 <a href="https://github.com/anuraghazra/convoychat"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=catmans1&layout=compact&theme=buefy" alt="catmans1's top languages"/></a><br><br /></p>
 
-## Visitors*
+## Visitors
 ![Visitor Count](https://profile-counter.glitch.me/catmans1/count.svg)
 
-*<p align="right">&#42;In millions</p>*
