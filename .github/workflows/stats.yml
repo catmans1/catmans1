@@ -1,6 +1,9 @@
 name: Generate and update GitHub Stats
 
 on:
+  push:
+    branches:
+      - master
   schedule:
     # Runs automatically every day at 00:00 UTC (7 AM Vietnam time)
     - cron: '0 0 * * *'
@@ -24,3 +27,11 @@ jobs:
           stats_username: catmans1
           stats_output: github-stats.svg
           # You can customize layout/colors here if you like, but defaults are great.
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add github-stats.svg
+          git commit -m "Update GitHub Stats" || exit 0
+          git push
