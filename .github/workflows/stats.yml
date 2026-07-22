@@ -26,7 +26,7 @@ jobs:
           card: stats
           options: username=catmans1&show_icons=true&theme=buefy&include_all_commits=true&count_private=true
           path: github-stats.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
       - name: Generate top languages card
         uses: stats-organization/github-readme-stats-action@main
@@ -34,14 +34,14 @@ jobs:
           card: top-langs
           options: username=catmans1&layout=compact&theme=buefy&count_private=true
           path: github-top-langs.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
       - name: Generate streak stats card
         uses: DenverCoder1/github-readme-streak-stats@main
         with:
           options: user=catmans1&theme=buefy
           path: github-streak-stats.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
       - name: Generate trophy card
         uses: soulteary/github-profile-trophy-action@v1.0.0
