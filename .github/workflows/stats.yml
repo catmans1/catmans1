@@ -1,0 +1,26 @@
+name: Generate and update GitHub Stats
+
+on:
+  schedule:
+    # Runs automatically every day at 00:00 UTC (7 AM Vietnam time)
+    - cron: '0 0 * * *'
+  # Allows you to manually trigger it from the "Actions" tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Required to commit the new SVG image back to the repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate extended stats table
+        uses: stats-organization/github-readme-stats-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          stats_username: catmans1
+          stats_output: github-stats.svg
+          # You can customize layout/colors here if you like, but defaults are great.
