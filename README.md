@@ -4,7 +4,7 @@
 
 <!-- Extended stats table (auto-updated daily) -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/catmans1/catmans1/main/github-stats.svg" alt="GitHub Extended Stats" />
+  <img src="https://raw.githubusercontent.com/catmans1/catmans1/master/github-stats.svg" alt="GitHub Extended Stats" />
 </p>
 
 <!-- Keep your favorite language chart -->
