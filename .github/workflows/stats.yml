@@ -23,10 +23,10 @@ jobs:
       - name: Generate extended stats table
         uses: stats-organization/github-readme-stats-action@main
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          stats_username: catmans1
-          stats_output: github-stats.svg
-          # You can customize layout/colors here if you like, but defaults are great.
+          card: stats
+          options: username=catmans1
+          path: github-stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and push changes
         run: |
