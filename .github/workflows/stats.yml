@@ -48,7 +48,7 @@ jobs:
         with:
           options: 'username=catmans1&theme=buefy&column=7'
           path: github-trophy.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
       - name: Commit and push changes
         run: |
