@@ -1,9 +1,10 @@
-name: Generate and update GitHub Stats
+name: Generate and update GitHub Stats & Snake Animation
 
 on:
   push:
     branches:
       - master
+      - main
   schedule:
     # Runs automatically every day at 00:00 UTC (7 AM Vietnam time)
     - cron: '0 0 * * *'
@@ -20,11 +21,29 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # ===== SNAKE ANIMATION =====
+      - name: generate github-contribution-grid-snake.svg
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: catmans1
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: push snake to output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # ===== STATS CARDS =====
       - name: Generate stats card
         uses: stats-organization/github-readme-stats-action@main
         with:
           card: stats
-          options: username=catmans1&show_icons=true&theme=buefy&include_all_commits=true&count_private=true
+          options: username=catmans1&show_icons=true&theme=solarized-dark&include_all_commits=true&count_private=true
           path: github-stats.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
@@ -32,28 +51,22 @@ jobs:
         uses: stats-organization/github-readme-stats-action@main
         with:
           card: top-langs
-          options: username=catmans1&layout=compact&theme=buefy&count_private=true
+          options: username=catmans1&layout=compact&theme=solarized-dark&count_private=true
           path: github-top-langs.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
       - name: Generate streak stats card
         uses: DenverCoder1/github-readme-streak-stats@main
         with:
-          options: user=catmans1&theme=buefy
+          options: user=catmans1&theme=solarized-dark
           path: github-streak-stats.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
-      - name: Generate trophy card
-        uses: soulteary/github-profile-trophy-action@v1.0.0
-        with:
-          options: 'username=catmans1&theme=buefy&column=7'
-          path: github-trophy.svg
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-
+      # ===== COMMIT & PUSH =====
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add github-stats.svg github-top-langs.svg github-streak-stats.svg github-trophy.svg
-          git commit -m "Update GitHub Stats, Streak, Languages, and Trophies" || exit 0
+          git add github-stats.svg github-top-langs.svg github-streak-stats.svg
+          git commit -m "Update GitHub Stats, Streak, Languages" || exit 0
           git push
