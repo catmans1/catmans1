@@ -1,0 +1,312 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 320" width="100%" height="320" shape-rendering="crispEdges">
+  <defs>
+    <style>
+      /* Retro 8-bit Step Animations */
+      @keyframes pixelWavePaw {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        25% {
+          transform: translateY(-6px);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+        75% {
+          transform: translateY(-6px);
+        }
+      }
+
+      @keyframes pixelBallBounce {
+        0%, 100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        30% {
+          transform: translateY(-24px) rotate(45deg);
+        }
+        50% {
+          transform: translateY(-40px) rotate(90deg);
+        }
+        70% {
+          transform: translateY(-24px) rotate(135deg);
+        }
+      }
+
+      @keyframes pixelShadow {
+        0%, 100% {
+          transform: scaleX(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scaleX(0.5);
+          opacity: 0.1;
+        }
+      }
+
+      @keyframes pixelBlink {
+        0%, 90%, 100% {
+          opacity: 1;
+        }
+        95% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes retroSparkle {
+        0%, 100% {
+          opacity: 0.1;
+          transform: scale(0.7);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.1);
+        }
+      }
+
+      @keyframes arcadeGlow {
+        0%, 100% {
+          fill: #38ef7d;
+        }
+        50% {
+          fill: #11998e;
+        }
+      }
+
+      .pixel-paw {
+        animation: pixelWavePaw 1.2s steps(4) infinite;
+        transform-origin: 215px 140px;
+      }
+
+      .pixel-ball {
+        animation: pixelBallBounce 1.2s steps(6) infinite;
+        transform-origin: 360px 170px;
+      }
+
+      .pixel-ball-shadow {
+        animation: pixelShadow 1.2s steps(4) infinite;
+        transform-origin: 360px 225px;
+      }
+
+      .cat-eyes {
+        animation: pixelBlink 4s steps(1) infinite;
+      }
+
+      .sparkle-a {
+        animation: retroSparkle 1.8s steps(3) infinite;
+        transform-origin: 140px 65px;
+      }
+
+      .sparkle-b {
+        animation: retroSparkle 1.8s steps(3) 0.9s infinite;
+        transform-origin: 410px 85px;
+      }
+
+      .pixel-text {
+        font-family: 'Courier New', 'Press Start 2P', monospace;
+        font-weight: 900;
+        letter-spacing: 6px;
+        animation: arcadeGlow 2.5s steps(3) infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Transparent Background -->
+  <rect width="540" height="320" fill="transparent" />
+
+  <!-- Retro Pixel Sparkles -->
+  <!-- Sparkle A -->
+  <g class="sparkle-a" fill="#FFD43B">
+    <rect x="138" y="60" width="4" height="12" />
+    <rect x="134" y="64" width="12" height="4" />
+  </g>
+  <!-- Sparkle B -->
+  <g class="sparkle-b" fill="#FFD43B">
+    <rect x="408" y="80" width="4" height="12" />
+    <rect x="404" y="84" width="12" height="4" />
+  </g>
+
+  <!-- ================= PIXEL SHADOWS ================= -->
+  <!-- Cat Shadow -->
+  <rect x="210" y="222" width="100" height="6" fill="#000000" opacity="0.2" />
+  <rect x="220" y="228" width="80" height="4" fill="#000000" opacity="0.15" />
+
+  <!-- Ball Shadow -->
+  <g class="pixel-ball-shadow">
+    <rect x="342" y="224" width="36" height="6" fill="#000000" />
+    <rect x="348" y="230" width="24" height="4" fill="#000000" />
+  </g>
+
+  <!-- ================= PIXEL MANEKI NEKO ================= -->
+  <g id="pixel-cat">
+    <!-- Tail (Left) -->
+    <g fill="#E8590C">
+      <rect x="192" y="180" width="8" height="24" />
+      <rect x="184" y="164" width="8" height="20" />
+      <rect x="188" y="156" width="12" height="8" />
+    </g>
+
+    <!-- Cat Body Base (White & Calico) -->
+    <!-- Main White Body -->
+    <g fill="#F8F9FA">
+      <rect x="216" y="144" width="88" height="76" />
+      <rect x="208" y="152" width="8" height="60" />
+      <rect x="304" y="152" width="8" height="60" />
+      <!-- Head Base -->
+      <rect x="224" y="92" width="72" height="52" />
+      <rect x="216" y="100" width="88" height="36" />
+    </g>
+
+    <!-- Calico Patches (Orange & Black Pixel Blocks) -->
+    <!-- Head Calico (Orange) -->
+    <g fill="#E8590C">
+      <rect x="216" y="100" width="16" height="20" />
+      <rect x="224" y="92" width="16" height="12" />
+      <rect x="208" y="164" width="16" height="28" />
+      <rect x="216" y="184" width="12" height="20" />
+    </g>
+    <!-- Head Calico (Dark Slate) -->
+    <g fill="#2B2D42">
+      <rect x="288" y="92" width="8" height="16" />
+      <rect x="296" y="100" width="8" height="16" />
+      <rect x="296" y="164" width="16" height="28" />
+    </g>
+
+    <!-- Ears -->
+    <!-- Left Ear -->
+    <g>
+      <rect x="220" y="68" width="12" height="24" fill="#2B2D42" />
+      <rect x="228" y="60" width="12" height="16" fill="#2B2D42" />
+      <!-- Pink Inner Ear -->
+      <rect x="228" y="72" width="8" height="16" fill="#FF8787" />
+    </g>
+    <!-- Right Ear -->
+    <g>
+      <rect x="288" y="68" width="12" height="24" fill="#2B2D42" />
+      <rect x="280" y="60" width="12" height="16" fill="#2B2D42" />
+      <!-- Pink Inner Ear -->
+      <rect x="284" y="72" width="8" height="16" fill="#FF8787" />
+    </g>
+
+    <!-- Cat Face (Pixel Features) -->
+    <!-- Eyes (^ ^) with Blinking Animation -->
+    <g class="cat-eyes" fill="#2B2D42">
+      <!-- Left Eye -->
+      <rect x="236" y="112" width="12" height="4" />
+      <rect x="232" y="116" width="4" height="4" />
+      <rect x="248" y="116" width="4" height="4" />
+      <!-- Right Eye -->
+      <rect x="272" y="112" width="12" height="4" />
+      <rect x="268" y="116" width="4" height="4" />
+      <rect x="284" y="116" width="4" height="4" />
+    </g>
+
+    <!-- Pink Blush Cheeks -->
+    <g fill="#FF8787">
+      <rect x="228" y="122" width="8" height="6" />
+      <rect x="284" y="122" width="8" height="6" />
+    </g>
+
+    <!-- Nose & Mouth (3) -->
+    <g fill="#2B2D42">
+      <rect x="258" y="118" width="4" height="4" fill="#FF8787" />
+      <rect x="254" y="124" width="4" height="4" />
+      <rect x="262" y="124" width="4" height="4" />
+      <rect x="258" y="126" width="4" height="2" />
+    </g>
+
+    <!-- Pixel Whiskers -->
+    <g fill="#2B2D42">
+      <rect x="208" y="116" width="12" height="2" />
+      <rect x="204" y="124" width="14" height="2" />
+      <rect x="300" y="116" width="12" height="2" />
+      <rect x="302" y="124" width="14" height="2" />
+    </g>
+
+    <!-- Red Pixel Collar -->
+    <rect x="224" y="142" width="72" height="8" fill="#E63946" />
+
+    <!-- Gold Bell (Center) -->
+    <g>
+      <rect x="254" y="148" width="12" height="12" fill="#FFD43B" />
+      <rect x="256" y="150" width="8" height="8" fill="#FCC419" />
+      <rect x="258" y="154" width="4" height="4" fill="#E67700" />
+    </g>
+
+    <!-- Right Paw (Resting) -->
+    <g fill="#F8F9FA">
+      <rect x="284" y="172" width="16" height="16" />
+      <rect x="288" y="184" width="12" height="8" fill="#E9ECEF" />
+    </g>
+
+    <!-- Bottom Feet -->
+    <g fill="#E9ECEF">
+      <rect x="228" y="212" width="16" height="8" />
+      <rect x="276" y="212" width="16" height="8" />
+    </g>
+
+    <!-- ================= WAVING PIXEL PAW ================= -->
+    <g class="pixel-paw">
+      <!-- Arm & Raised Paw -->
+      <g fill="#F8F9FA">
+        <rect x="204" y="120" width="16" height="28" />
+        <rect x="196" y="100" width="16" height="24" />
+        <rect x="192" y="88" width="20" height="16" />
+        <!-- Paw Top Rounded -->
+        <rect x="196" y="84" width="12" height="4" />
+      </g>
+      <!-- Lucky Pink Pad on Raised Paw -->
+      <rect x="196" y="92" width="12" height="8" fill="#FF8787" />
+      <rect x="200" y="88" width="4" height="4" fill="#FF8787" />
+    </g>
+  </g>
+
+  <!-- ================= PIXEL FOOTBALL ================= -->
+  <g class="pixel-ball">
+    <!-- Outer White Circle Base (Pixelated) -->
+    <g fill="#FFFFFF">
+      <rect x="344" y="152" width="32" height="36" />
+      <rect x="340" y="156" width="40" height="28" />
+      <rect x="348" y="148" width="24" height="44" />
+    </g>
+    <!-- Outer Border -->
+    <g fill="#1E293B">
+      <rect x="348" y="146" width="24" height="2" />
+      <rect x="348" y="192" width="24" height="2" />
+      <rect x="338" y="160" width="2" height="20" />
+      <rect x="380" y="160" width="2" height="20" />
+    </g>
+    <!-- Center Black Pixel Pentagon -->
+    <g fill="#1E293B">
+      <rect x="356" y="164" width="8" height="12" />
+      <rect x="354" y="166" width="12" height="8" />
+      <!-- Outer Patches -->
+      <rect x="356" y="148" width="8" height="4" />
+      <rect x="356" y="188" width="8" height="4" />
+      <rect x="340" y="166" width="4" height="8" />
+      <rect x="376" y="166" width="4" height="8" />
+    </g>
+  </g>
+
+  <!-- ================= PIXEL BANNER & SLOGAN ================= -->
+  <!-- Retro Pixel Box Border -->
+  <g fill="#38ef7d">
+    <!-- Top Border -->
+    <rect x="120" y="255" width="300" height="3" />
+    <!-- Bottom Border -->
+    <rect x="120" y="295" width="300" height="3" />
+    <!-- Left Border -->
+    <rect x="120" y="255" width="3" height="43" />
+    <!-- Right Border -->
+    <rect x="417" y="255" width="3" height="43" />
+    <!-- Corner Pixels -->
+    <rect x="117" y="252" width="3" height="3" />
+    <rect x="420" y="252" width="3" height="3" />
+    <rect x="117" y="298" width="3" height="3" />
+    <rect x="420" y="298" width="3" height="3" />
+  </g>
+
+  <!-- Pixel Slogan Text -->
+  <text x="270" y="282" text-anchor="middle" font-size="18" class="pixel-text">
+    CODE FOR LIFE
+  </text>
+</svg>
